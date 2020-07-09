@@ -11,6 +11,7 @@ li {
   width: 375px;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 .mob-first {
@@ -22,6 +23,36 @@ li {
 .menu-mob {
   z-index: 1;
   background-color: #1f1b33;
+  position: relative;
+}
+
+.mob-menu-items {
+  position: absolute;
+  top: 217px;
+  left: 27px;
+  li {
+    color: #fff;
+    font-family: Helvetica;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 27px;
+    width: 126px;
+    padding: 18px 30px;
+  }
+  li:first-child {
+    padding-bottom: 57px;
+    font-weight: 900;
+  }
+  li.selected {
+    border-radius: 15.5px;
+    background: rgba(252, 128, 116, 0.2);
+    color: #fc8074;
+  }
+  li:last-child {
+    border-top: 1px solid #84818e;
+    padding-top: 57px;
+    margin-top: 57px;
+  }
 }
 
 .menu-mob-cover {
@@ -32,14 +63,20 @@ li {
   left: 0;
 }
 
-.cover-open:hover {
-  transform: rotate(-7deg) translate(160px, 30px);
+// Sets open / closed mobile menu
+.closed {
+  transform: rotate(0) translate(0);
+  transition: 1s;
+}
+
+.open {
+  transform: rotate(-7deg) translate(236px, 40px);
   transition: 1s;
 }
 
 .start {
   margin: 43px 0 0 36px;
-  border: 1px solid red;
+  display: flex;
   li {
     display: inline-block;
   }
@@ -74,14 +111,12 @@ li {
   }
 
   li:last-child {
-    height: 33px;
-    width: 95px;
     color: #9f9fa0;
-    font-family: Avenir;
+    font-family: Helvetica;
     font-size: 24px;
     font-weight: 500;
     letter-spacing: 5px;
     line-height: 33px;
-    padding: 7px 35px;
+    padding: 4px 0 0 35px;
   }
 }

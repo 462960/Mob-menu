@@ -1,16 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import * as cn from "classnames";
 import "./App.scss";
 
+import MobMenu from "./components/MobMenu";
+
 function App() {
+  // Sets open mobile menu
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(!open);
   return (
     <div className=" wrapper">
-      <div className="mob-first menu-mob"></div>
-      <div className="mob-first menu-mob-cover cover-open">
+      <div className="mob-first menu-mob">
+        <MobMenu setOpen={setOpen} />
+      </div>
+      <div className={cn("mob-first menu-mob-cover closed", { open })}>
         <ul className="start">
-          <li>
+          <li onClick={handleOpen}>
             <span className="burger"></span>
           </li>
-          <li>start</li>
+          <li>START</li>
         </ul>
       </div>
     </div>
