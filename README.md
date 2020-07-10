@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This tiny project is available here: http://proxify.skepton.ru/
 
 ## Available Scripts
 
